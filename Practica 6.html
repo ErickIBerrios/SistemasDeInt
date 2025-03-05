@@ -1,0 +1,35 @@
+<html>
+    <head>  
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+        <div class="container">
+            
+        </div>
+        <script>
+            let arreglo=["#035303","#5c9c3a","#2b491c","#259b00","#548b43"];
+            let contenedor=document.querySelector(".container");
+            for(let i=0;i<100;i++){
+                let cuadrado=document.createElement("div");
+                cuadrado.classList.add("square");
+                contenedor.appendChild(cuadrado);
+                cuadrado.setAttribute("visited",'false')
+                if (cuadrado.getAttribute("visited",'true')){
+                    cuadrado.addEventListener("mouseover", function(){
+                    num=Math.floor(Math.random()*arreglo.length)
+                    cuadrado.style.background=arreglo[num]
+                   
+                });
+                }
+                cuadrado.addEventListener("mouseout", function(){
+                    num=Math.floor(Math.random()*arreglo.length)
+                    cuadrado.style.background= "#1d1d1d";
+                    cuadrado.setAttribute("visited",true)
+                });
+            }  
+            
+            
+        </script>
+    </body>
+
+</html>
